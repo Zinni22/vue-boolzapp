@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Boolzapp</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+
+        <div class="background">
+
+            <div class="big-container">
+
+                <!-- ASIDE -->
+                <div class="aside">
+
+                    <!-- HEADER ASIDE -->
+                    <header id="aside-header">
+
+                        <div>
+                            <img src="img/avatar_io.jpg" alt="sofia_img">
+                            <h4>Sofia</h4>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-circle"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        
+                    </header>
+                    <!-- HEADER ASIDE -->
+
+                    <!-- MAIN ASIDE -->
+                    <section id="blue-section">
+
+                        <div class="bell-blue-section">
+                        <i class="fa-solid fa-bell-slash"></i> 
+                        </div>
+
+                        <div class="text-blue-section">
+                            <h5>Ricevi notifiche di nuovi messaggi</h5>
+                            <p>Attiva notifiche desktop</p>
+                        </div>
+
+                    </section>
+
+                    <section id="input-section">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+
+                    </section>
+
+                    <section id="chat-section">
+
+                        <ul>
+
+                            <li>
+                                <div class="chat-contact">
+                                    <img src="img/avatar_1.jpg" alt="michele-img">
+                                    <h5>Michele</h5>
+                                    <p>Ultimo messaggio alle 16:00</p> 
+                                </div>
+
+                                <div class="chat-time">
+                                    <p>16:00</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </section>
+                    <!-- MAIN ASIDE -->
+
+                </div>
+                <!-- ASIDE -->
+
+
+                <!-- CURRENT CHAT -->
+                <div class="current-chat">
+
+                    <!-- HEADER CURRENT CHAT -->
+                    <header id="current-chat-header">
+
+                    </header>
+                    <!-- HEADER CURRENT CHAT -->
+
+                </div>
+                <!-- CURRENT CHAT -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- MY JS -->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

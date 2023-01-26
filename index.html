@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,28 @@
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <!-- APP -->
     <div id="app">
 
+        <!-- BACKGROUND -->
         <div class="background">
 
+            <!-- BIG CONTAINER -->
             <div class="big-container">
 
                 <!-- ASIDE -->
                 <div class="aside">
 
                     <!-- HEADER ASIDE -->
-                    <header id="aside-header">
+                    <header class="aside-main-header">
 
                         <div>
                             <img src="img/avatar_io.jpg" alt="sofia_img">
@@ -36,7 +41,7 @@
                             <i class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
-                        
+
                     </header>
                     <!-- HEADER ASIDE -->
 
@@ -44,7 +49,7 @@
                     <section id="blue-section">
 
                         <div class="bell-blue-section">
-                        <i class="fa-solid fa-bell-slash"></i> 
+                            <i class="fa-solid fa-bell-slash"></i>
                         </div>
 
                         <div class="text-blue-section">
@@ -66,11 +71,11 @@
 
                         <ul>
 
-                            <li>
+                            <li v-for="(contact, index) in contacts">
                                 <div class="chat-contact">
-                                    <img src="img/avatar_1.jpg" alt="michele-img">
-                                    <h5>Michele</h5>
-                                    <p>Ultimo messaggio alle 16:00</p> 
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                                    <h5> {{ contact.name }} </h5>
+                                    <p>Ultimo messaggio alle 16:00</p>
                                 </div>
 
                                 <div class="chat-time">
@@ -91,23 +96,84 @@
                 <div class="current-chat">
 
                     <!-- HEADER CURRENT CHAT -->
-                    <header id="current-chat-header">
+                    <header class="aside-main-header">
+
+                        <div>
+                            <img src="img/avatar_1.jpg" alt="michele-img">
+                            <div>
+                                <h4>
+                                    Michele
+                                </h4>
+                                <p>Ultimo accesso oggi alle 12:45</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
 
                     </header>
                     <!-- HEADER CURRENT CHAT -->
+
+                    <!-- MAIN CURRENT CHAT -->
+                    <main id="main-current-chat">
+
+                        <div class="messages sent">
+                            Hai portato a spasso il cane?
+                            <span>11:50</span>
+                        </div>
+
+                        <div class="messages sent">
+                            Ricordati di stendere i panni
+                            <span>12:10</span>
+                        </div>
+
+                        <div class="messages received">
+                            Tutto fatto!!
+                            <span>12:40</span>
+                        </div>
+
+                    </main>
+                    <!-- MAIN CURRENT CHAT -->
+
+                    <!-- FOOTER CURRENT CHAT -->
+                    <footer id="footer-current-chat">
+
+                        <div class="function-container">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </div>
+
+                        <div class="function-container">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+
+                    </footer>
+                    <!-- FOOTER CURRENT CHAT -->
 
                 </div>
                 <!-- CURRENT CHAT -->
 
 
             </div>
+            <!-- BIG CONTAINER -->
+
 
         </div>
+        <!-- BACKGROUND -->
 
     </div>
+    <!-- APP -->
+
+
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- MY JS -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
+
 </html>

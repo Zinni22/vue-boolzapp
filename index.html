@@ -119,18 +119,16 @@
                     <!-- MAIN CURRENT CHAT -->
                     <main id="main-current-chat">
 
-                        <div class="messages sent">
-                            Hai portato a spasso il cane?
+                        <div class="messages sent"
+                        v-for="completeMessage in contacts[currentContact].messages"
+                        v-if="contacts[currentContact].completeMessage.status = 'sent'">
+                            {{completeMessage.message}}
                             <span>11:50</span>
                         </div>
 
-                        <div class="messages sent">
-                            Ricordati di stendere i panni
-                            <span>12:10</span>
-                        </div>
-
-                        <div class="messages received">
-                            Tutto fatto!!
+                        <div class="messages received"
+                        v-else-if="contacts[currentContact].messages[currentMessage].status = 'received'">
+                        {{contacts[currentContact].messages[currentMessage].message}}
                             <span>12:40</span>
                         </div>
 

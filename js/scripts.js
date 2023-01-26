@@ -16,7 +16,7 @@ createApp ({
                         {
                         date: '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
-                                    status: 'sent'
+                        status: 'sent'
                         },
                         {
                         date: '10/01/2020 15:50:00',
@@ -169,7 +169,10 @@ createApp ({
                         }
                     ],
                 }
-            ]
+            ],
+
+            currentContact: 0,
+            currentMessage: 0,
                
         }
 

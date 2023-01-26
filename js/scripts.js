@@ -172,14 +172,18 @@ createApp ({
             ],
 
             currentContact: 0,
-            currentMessage: 0,
-               
+           
         }
 
     },
 
     methods: {
 
+        
+        clickedContact(i){
+            this.currentContact = i;
+            console.log(i, this.currentContact);
+        }
         
 
     }

@@ -5,6 +5,8 @@ createApp ({
     data (){
 
         return{
+
+            newMessage: '',
             
             contacts: [
                 
@@ -182,10 +184,41 @@ createApp ({
         
         clickedContact(i){
             this.currentContact = i;
-            console.log(i, this.currentContact);
-        }
+            console.log(this.currentContact);
+        },
         
 
-    }
+        addNewMessage(element){
+            if(this.newMessage != ''){
+               this.contacts[this.currentContact].messages.push(
+
+                    {
+                    message: element,
+                    status: 'sent'
+                    }
+               );
+
+               this.newMessage = '';
+               console.log('inserisco');
+
+               setTimeout(this.replyOk,2000);
+
+            };
+
+        },
+
+        replyOk(){
+
+            this.contacts[this.currentContact].messages.push(
+
+                {
+                message: 'OK!',
+                status: 'received'
+                }
+           );
+        },
+
+    },
+
 
 }).mount('#app');

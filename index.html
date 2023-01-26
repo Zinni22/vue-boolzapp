@@ -77,7 +77,9 @@
                                 <div class="chat-contact">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                     <h5> {{ contact.name }} </h5>
-                                    <p>Ultimo messaggio alle 16:00</p>
+                                    <p>
+                                        Ultimo messaggio alle
+                                    </p>
                                 </div>
 
                                 <div class="chat-time">
@@ -146,7 +148,9 @@
                         </div>
 
                         <div>
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <form action="" @submit.prevent="addNewMessage(newMessage)">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage">
+                            </form>
                         </div>
 
                         <div class="function-container">

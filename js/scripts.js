@@ -6,6 +6,8 @@ createApp ({
 
         return{
 
+            searchInput: '',
+
             newMessage: '',
             
             contacts: [
@@ -181,27 +183,26 @@ createApp ({
 
     methods: {
 
-        
+
         clickedContact(i){
             this.currentContact = i;
             console.log(this.currentContact);
         },
         
-
         addNewMessage(element){
             if(this.newMessage != ''){
                this.contacts[this.currentContact].messages.push(
 
                     {
-                    message: element,
-                    status: 'sent'
+                        date: '10/01/2020 15:51:00',
+                        message: element,
+                        status: 'sent'
                     }
                );
 
                this.newMessage = '';
-               console.log('inserisco');
 
-               setTimeout(this.replyOk,2000);
+               setTimeout(this.replyOk,1000);
 
             };
 
@@ -212,13 +213,28 @@ createApp ({
             this.contacts[this.currentContact].messages.push(
 
                 {
-                message: 'OK!',
-                status: 'received'
+                    date: '10/01/2020 15:52:00',
+                    message: 'Ok!',
+                    status: 'received'
                 }
            );
         },
 
     },
+
+    computed: {
+        contactList(){
+            if(this.searchInput.trim().length > 0){
+
+                return this.contacts.filter((contact) => contact.name.toLowerCase().includes
+                 (this.searchInput.trim().toLowerCase())
+                )
+
+                ;
+            }
+            return this.contacts
+        },
+    }
 
 
 }).mount('#app');

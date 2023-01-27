@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Boolzapp</title>
 
+    <!-- ICON -->
+    <link rel="shortcut icon" href="https://static.whatsapp.net/rsrc.php/v3/yz/r/ujTY9i_Jhs1.png">
+
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -63,18 +66,22 @@
 
                         <i class="fa-solid fa-magnifying-glass"></i>
 
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
-
+                        <input type="text" placeholder="Cerca o inizia una nuova chat"
+                        v-model="searchInput"
+                        >
+ 
                     </section>
 
                     <section id="chat-section">
 
                         <ul>
 
-                            <li 
-                            v-for="(contact, index) in contacts"
-                            @click="clickedContact(index)">
+                            <li
+                            v-for="(contact, index) in contactList"
+                            @click="clickedContact(index)"
+                            >
                                 <div class="chat-contact">
+
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                     <h5> {{ contact.name }} </h5>
                                     <p>
@@ -103,10 +110,10 @@
                     <header class="aside-main-header">
 
                         <div>
-                            <img src="img/avatar_1.jpg" alt="michele-img">
+                            <img :src="`img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name">
                             <div>
                                 <h4>
-                                    Michele
+                                    {{contacts[currentContact].name}}
                                 </h4>
                                 <p>Ultimo accesso oggi alle 12:45</p>
                             </div>
@@ -125,16 +132,12 @@
 
                         <div
                         v-for="completeMessage in contacts[currentContact].messages"
-                        :class="completeMessage.status == 'sent' ? 'messages sent' : 'hidden' ">
+                        :class="completeMessage.status == 'sent' ? 'messages sent' : 'messages received' "
+                        >
                             {{completeMessage.message}}
-                            <span>11:50</span>
-                        </div>
 
-                        <div
-                        v-for="completeMessage in contacts[currentContact].messages"
-                        :class="completeMessage.status == 'received' ? 'messages received' : 'hidden' ">
-                            {{completeMessage.message}}
-                            <span>12:40</span>
+                            <span>{{completeMessage.date}}</span>
+
                         </div>
 
                     </main>
@@ -149,7 +152,7 @@
 
                         <div>
                             <form action="" @submit.prevent="addNewMessage(newMessage)">
-                                <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage">
+                                <input type="text" placeholder="Scrivi un messaggio..." v-model="newMessage">
                             </form>
                         </div>
 

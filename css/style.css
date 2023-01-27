@@ -8,12 +8,8 @@ body i{
     color: rgb(180, 180, 180);
     cursor: pointer;
 }
-.hidden{
-    display: none;
-}
-.block{
-    display: block;
-}
+
+
 
 /* BACKGROUND */
 .background{
@@ -221,3 +217,4 @@ body i{
     border-radius: 5px;
 }
 /* CURRENT CHAT */
+
